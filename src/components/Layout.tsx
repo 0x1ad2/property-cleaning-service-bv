@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, ShoppingCart } from "lucide-react";
-import { useCartStore } from "../shop/cartStore";
+import { Menu, X } from "lucide-react";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -11,12 +10,9 @@ function Navbar() {
   const links = [
     { href: "/", label: "Home" },
     { href: "/diensten", label: "Diensten" },
-    { href: "/shop", label: "Shop" },
     { href: "/over-ons", label: "Over Ons" },
     { href: "/contact", label: "Contact" },
   ];
-  const openCart = useCartStore((s) => s.openCart);
-  const itemCount = useCartStore((s) => s.getItemCount);
 
   const isActive = (href: string) => {
     if (href === "/") {
@@ -28,7 +24,7 @@ function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3">
             <img
               src="/logo.svg"
@@ -42,7 +38,7 @@ function Navbar() {
             </div>
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-10">
             {links.map((link) => (
               <Link
                 key={link.href}
@@ -63,24 +59,14 @@ function Navbar() {
                 )}
               </Link>
             ))}
-            <button
-              onClick={openCart}
-              className="relative p-2 text-muted hover:text-blue-700 transition-colors"
-              aria-label="Winkelwagen"
-            >
-              <ShoppingCart className="w-5 h-5" />
-              {itemCount() > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-error text-white text-[9px] font-bold rounded-full flex items-center justify-center">
-                  {itemCount()}
-                </span>
-              )}
-            </button>
-            <Link
-              to="/contact"
+            <a
+              href="https://fillout.com/t/YOUR_FORM_ID"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-700 text-white text-sm font-semibold rounded-lg hover:bg-blue-800 transition-colors shadow-md shadow-blue-700/30"
             >
               Offerte Aanvragen
-            </Link>
+            </a>
           </div>
 
           <button
@@ -117,13 +103,15 @@ function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                to="/contact"
+              <a
+                href="https://fillout.com/t/YOUR_FORM_ID"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="block px-4 py-2.5 bg-blue-700 text-white text-sm font-semibold rounded-lg hover:bg-blue-800 transition-colors text-center"
               >
                 Offerte Aanvragen
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}
@@ -172,15 +160,7 @@ function Footer() {
                   to="/diensten"
                   className="text-white/70 hover:text-sky-400 transition-colors"
                 >
-                  Industriële Panden
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/diensten"
-                  className="text-white/70 hover:text-sky-400 transition-colors"
-                >
-                  Medische Faciliteiten
+                  Huisarts & Tandarts Praktijken
                 </Link>
               </li>
               <li>
@@ -189,6 +169,30 @@ function Footer() {
                   className="text-white/70 hover:text-sky-400 transition-colors"
                 >
                   Retail & Horeca
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/diensten"
+                  className="text-white/70 hover:text-sky-400 transition-colors"
+                >
+                  Industriële Panden
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/diensten"
+                  className="text-white/70 hover:text-sky-400 transition-colors"
+                >
+                  Particuliere Woningen
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/diensten"
+                  className="text-white/70 hover:text-sky-400 transition-colors"
+                >
+                  Glasbewassing
                 </Link>
               </li>
             </ul>
@@ -206,14 +210,6 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to="/shop"
-                  className="text-white/70 hover:text-sky-400 transition-colors"
-                >
-                  Webshop
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/contact"
                   className="text-white/70 hover:text-sky-400 transition-colors"
                 >
@@ -227,12 +223,14 @@ function Footer() {
             <ul className="space-y-2 text-sm text-white/70">
               <li>info@propertycleaningservice.nl</li>
             </ul>
-            <Link
-              to="/contact"
+            <a
+              href="https://fillout.com/t/YOUR_FORM_ID"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-4 inline-block px-6 py-2.5 bg-blue-700 text-white text-sm font-semibold rounded-lg hover:bg-blue-800 transition-colors shadow-md"
             >
               Offerte Aanvragen
-            </Link>
+            </a>
           </div>
         </div>
         <div className="border-t border-white/10 pt-6 text-center text-xs text-white/50">

@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowRight, Award, Shield, Users, TrendingUp } from "lucide-react";
+import { ArrowRight, Award, Shield, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
 function Hero() {
@@ -13,7 +13,7 @@ function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-strong/90 via-strong/70 to-strong/50" />
       </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-16">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -60,40 +60,40 @@ function Hero() {
   );
 }
 
-function Stats() {
-  const stats = [
-    { number: "15+", label: "Jaar Ervaring" },
-    { number: "500+", label: "Tevreden Klanten" },
-    { number: "50+", label: "Teamleden" },
-    { number: "24/7", label: "Ondersteuning" },
-  ];
+// function Stats() {
+//   const stats = [
+//     { number: "15+", label: "Jaar Ervaring" },
+//     { number: "500+", label: "Tevreden Klanten" },
+//     { number: "50+", label: "Teamleden" },
+//     { number: "24/7", label: "Ondersteuning" },
+//   ];
 
-  return (
-    <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat, idx) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: idx * 0.05 }}
-              className="text-center"
-            >
-              <div className="text-5xl font-bold bg-gradient-to-r from-blue-700 to-sky-400 bg-clip-text text-transparent mb-2">
-                {stat.number}
-              </div>
-              <div className="text-sm text-muted uppercase tracking-wide">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+//   return (
+//     <section className="py-16 bg-white">
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+//           {stats.map((stat, idx) => (
+//             <motion.div
+//               key={stat.label}
+//               initial={{ opacity: 0, y: 20 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               viewport={{ once: true }}
+//               transition={{ duration: 0.3, delay: idx * 0.05 }}
+//               className="text-center"
+//             >
+//               <div className="text-5xl font-bold bg-gradient-to-r from-blue-700 to-sky-400 bg-clip-text text-transparent mb-2">
+//                 {stat.number}
+//               </div>
+//               <div className="text-sm text-muted uppercase tracking-wide">
+//                 {stat.label}
+//               </div>
+//             </motion.div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 function Services() {
   const services = [

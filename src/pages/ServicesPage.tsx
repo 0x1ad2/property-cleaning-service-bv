@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Hero() {
   return (
-    <section className="relative h-[500px] flex items-center overflow-hidden">
+    <section className="relative h-[600px] flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img
           src="/images/optimized/Industrial Vacuum Usage.webp"
@@ -18,7 +18,7 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="text-5xl sm:text-6xl font-bold text-white mb-6 leading-tight max-w-3xl"
+          className="text-5xl sm:text-6xl font-bold text-white mb-6 leading-tight max-w-3xl mt-16"
         >
           Uitgebreide Schoonmaakoplossingen
         </motion.h1>

@@ -1,10 +1,10 @@
 import { motion } from "motion/react";
-import { Award, Users, TrendingUp, Shield } from "lucide-react";
+import { Award, Users, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
 function Hero() {
   return (
-    <section className="relative h-[500px] flex items-center overflow-hidden">
+    <section className="relative h-[600px] flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img
           src="/images/optimized/Branded Company Van.webp"
@@ -13,7 +13,7 @@ function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-strong/95 via-strong/80 to-strong/60" />
       </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

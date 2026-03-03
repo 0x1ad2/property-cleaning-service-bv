@@ -1,10 +1,9 @@
 import { motion } from "motion/react";
-import { useState } from "react";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 function Hero() {
   return (
-    <section className="relative h-[400px] flex items-center overflow-hidden">
+    <section className="relative h-[500px] flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img
           src="/images/optimized/Office Building Hall.webp"
@@ -13,7 +12,7 @@ function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-strong/95 via-strong/85 to-strong/70" />
       </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -114,35 +113,6 @@ function ContactInfo() {
 }
 
 function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert("Bedankt voor uw bericht! We nemen binnen 24 uur contact met u op.");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      message: "",
-    });
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   return (
     <section className="py-20 bg-background">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -150,8 +120,8 @@ function ContactForm() {
           <h2 className="text-4xl font-bold text-strong mb-4">
             Vraag Een Gratis Offerte Aan
           </h2>
-          <p className="text-lg text-muted">
-            Vul onderstaand formulier in en we nemen binnen 24 uur contact met u
+          <p className="text-lg text-muted mb-8">
+            Vul ons online formulier in en we nemen binnen 24 uur contact met u
             op
           </p>
         </div>
@@ -160,88 +130,23 @@ function ContactForm() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.3 }}
-          className="bg-white rounded-2xl p-8 sm:p-12 shadow-xl"
+          className="bg-white rounded-2xl p-12 shadow-xl text-center"
         >
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-semibold text-strong mb-2">
-                  Naam *
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border-2 border-border focus:border-blue-700 focus:ring-4 focus:ring-blue-100 outline-none transition-all"
-                  placeholder="Uw naam"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-strong mb-2">
-                  E-mail *
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border-2 border-border focus:border-blue-700 focus:ring-4 focus:ring-blue-100 outline-none transition-all"
-                  placeholder="uw@email.nl"
-                />
-              </div>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-semibold text-strong mb-2">
-                  Telefoon
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border-2 border-border focus:border-blue-700 focus:ring-4 focus:ring-blue-100 outline-none transition-all"
-                  placeholder="+31 6 ..."
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-strong mb-2">
-                  Bedrijf
-                </label>
-                <input
-                  type="text"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border-2 border-border focus:border-blue-700 focus:ring-4 focus:ring-blue-100 outline-none transition-all"
-                  placeholder="Uw bedrijf"
-                />
-              </div>
-            </div>
-            <div>
-              <label className="block text-sm font-semibold text-strong mb-2">
-                Bericht *
-              </label>
-              <textarea
-                name="message"
-                required
-                value={formData.message}
-                onChange={handleChange}
-                rows={6}
-                className="w-full px-4 py-3 rounded-lg border-2 border-border focus:border-blue-700 focus:ring-4 focus:ring-blue-100 outline-none transition-all resize-none"
-                placeholder="Vertel ons over uw schoonmaakbehoeften..."
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full px-8 py-4 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors shadow-lg shadow-blue-700/30"
+          <div className="max-w-md mx-auto">
+            <p className="text-muted mb-8">
+              Klik op de knop hieronder om ons offerteformulier in te vullen. We
+              zorgen ervoor dat u zo snel mogelijk een passende offerte
+              ontvangt.
+            </p>
+            <a
+              href="https://fillout.com/t/YOUR_FORM_ID"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors shadow-lg shadow-blue-700/30"
             >
-              Bericht Versturen
-            </button>
-          </form>
+              Open Offerteformulier
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

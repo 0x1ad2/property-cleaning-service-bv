@@ -30,7 +30,7 @@ function Hero() {
           transition={{ duration: 0.3 }}
           className="text-sm font-semibold text-sky-400 uppercase tracking-wider mb-3"
         >
-          Property Cleaning Service BV
+          Property Cleaning Service B.V.
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

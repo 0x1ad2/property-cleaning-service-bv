@@ -32,7 +32,7 @@ function Navbar() {
           <Link to="/" className="flex items-center gap-3">
             <img
               src="/logo.svg"
-              alt="Property Cleaning Service BV"
+              alt="Property Cleaning Service B.V."
               className="h-10 w-auto"
             />
             <div className="flex flex-col">
@@ -141,14 +141,14 @@ function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <img
                 src="/logo.svg"
-                alt="Property Cleaning Service BV"
+                alt="Property Cleaning Service B.V."
                 className="h-10 w-auto brightness-0 invert"
               />
               <div className="flex flex-col">
                 <span className="font-bold text-sm leading-tight">
                   Property Cleaning Service
                 </span>
-                <span className="text-xs text-white/70">BV</span>
+                <span className="text-xs text-white/70">B.V.</span>
               </div>
             </div>
             <p className="text-sm text-white/70 leading-relaxed">
@@ -226,7 +226,6 @@ function Footer() {
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-white/70">
               <li>info@propertycleaningservice.nl</li>
-              <li>Landelijk Actief</li>
             </ul>
             <Link
               to="/contact"
@@ -238,7 +237,7 @@ function Footer() {
         </div>
         <div className="border-t border-white/10 pt-6 text-center text-xs text-white/50">
           <p>
-            {new Date().getFullYear()} Property Cleaning Service BV. Alle
+            {new Date().getFullYear()} Property Cleaning Service B.V. Alle
             rechten voorbehouden.
           </p>
         </div>

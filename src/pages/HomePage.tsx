@@ -102,15 +102,15 @@ function Services() {
       image: "Office Lobby.webp",
       desc: "Professionele schoonmaak voor kantoren en bedrijfspanden",
     },
-    {
-      title: "Retail Ruimtes",
-      image: "Retail Store.webp",
-      desc: "Houd uw winkelomgeving schoon voor klanten",
-    },
+    // {
+    //   title: "Retail Ruimtes",
+    //   image: "Retail Store.webp",
+    //   desc: "Houd uw winkelomgeving schoon voor klanten",
+    // },
     {
       title: "Medische Faciliteiten",
       image: "Medical Facility.webp",
-      desc: "Gespecialiseerde schoonmaak voor zorginstellingen",
+      desc: "Schoonmaak voor zorginstellingen",
     },
     {
       title: "Horeca",
@@ -118,14 +118,20 @@ function Services() {
       desc: "Handhaaf de hoogste normen voor uw gasten",
     },
     {
-      title: "Sportscholen & Fitness",
+      title: "Sportscholen",
       image: "Gym Cleaning.webp",
       desc: "Hygiënische schoonmaak voor sportfaciliteiten",
     },
+    // {
+    //   title: "Evenementenlocaties",
+    //   image: "Event Space.webp",
+    //   desc: "Voor en na evenement schoonmaakdiensten",
+    // },
+
     {
-      title: "Evenementenlocaties",
+      title: "Industrieel",
       image: "Event Space.webp",
-      desc: "Voor en na evenement schoonmaakdiensten",
+      desc: "Schoonmaak voor industriële faciliteiten",
     },
   ];
 
@@ -134,11 +140,11 @@ function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-strong mb-4">
-            Wij Werken Met Alle Soorten Faciliteiten
+            Wij maken verschillende soorten objecten schoon
           </h2>
           <p className="text-lg text-muted max-w-2xl mx-auto">
-            Van kantoren tot medische faciliteiten, wij bieden gespecialiseerde
-            schoonmaakdiensten op maat voor uw branche
+            Hieronder vindt u een overzicht van de soorten objecten die wij
+            schoonmaken
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -175,23 +181,18 @@ function WhyUs() {
   const reasons = [
     {
       icon: Shield,
-      title: "Volledig Verzekerd",
-      desc: "Volledige aansprakelijkheidsdekking en gecertificeerde professionals",
+      title: "Gecertificeerde Professionals",
+      desc: "Onze team bestaat uit gecertificeerde professionals die altijd op hoog niveau blijven.",
     },
     {
       icon: Award,
-      title: "Kwaliteit Gegarandeerd",
+      title: "Kwaliteit is onze prioriteit",
       desc: "Consistente hoogwaardige resultaten bij elke dienst",
     },
     {
       icon: Users,
       title: "Getraind Team",
       desc: "Ervaren personeel met voortdurende professionele training",
-    },
-    {
-      icon: TrendingUp,
-      title: "Bewezen Track Record",
-      desc: "15+ jaar dienstverlening aan bedrijven door heel Nederland",
     },
   ];
 
@@ -207,7 +208,7 @@ function WhyUs() {
             schoonmaakdiensten met professionaliteit en betrouwbaarheid
           </p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {reasons.map((reason, idx) => (
             <motion.div
               key={reason.title}
@@ -245,17 +246,17 @@ function CTA() {
       </div>
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl font-bold text-white mb-6">
-          Klaar Om Professionele Schoonmaak Te Ervaren?
+          Op zoek naar professionele schoonmaak die écht het verschil maakt?
         </h2>
         <p className="text-xl text-white/90 mb-8">
           Vraag vandaag nog een gratis offerte aan en ontdek waarom bedrijven
-          Property Cleaning Service BV vertrouwen
+          Property Cleaning Service B.V. vertrouwen
         </p>
         <Link
           to="/contact"
           className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
         >
-          Gratis Offerte Aanvragen
+          Offerte Aanvragen
           <ArrowRight className="w-5 h-5" />
         </Link>
       </div>
@@ -267,7 +268,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Stats />
+      {/* <Stats /> */}
       <Services />
       <WhyUs />
       <CTA />

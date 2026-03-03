@@ -28,7 +28,7 @@ function Hero() {
           transition={{ duration: 0.3, delay: 0.1 }}
           className="text-xl text-white/90 max-w-2xl leading-relaxed mb-8"
         >
-          Van dagelijks onderhoud tot grondige reiniging, wij bieden op maat
+          Van dagelijks schoonmaak tot grondige reiniging, wij bieden op maat
           gemaakte schoonmaakdiensten afgestemd op de specifieke behoeften van
           uw faciliteit.
         </motion.p>
@@ -57,20 +57,22 @@ function ServicesList() {
       features: [
         "Dagelijkse conciërgediensten",
         "Bureau en werkplek reiniging",
-        "Keuken en pauzeruimte onderhoud",
+        "Keuken en pauzeruimte schoonmaak",
         "Toilet sanitatie",
         "Vloerverzorging en stofzuigen",
+        "Koffie machine reiniging",
+        "Raam en glas reiniging",
       ],
     },
     {
-      title: "Medische Faciliteiten",
-      image: "Medical Room.webp",
+      title: "Huisarts & Tandarts Praktijken",
+      image: "",
       features: [
-        "Ziekenhuiswaardige desinfectie",
-        "Onderzoekskamer sanitatie",
-        "Wachtruimte onderhoud",
-        "Biohazard afvalverwerking",
-        "Naleving van gezondheidsnormen",
+        "Toilet sanitatie",
+        "Vloerverzorging en stofzuigen",
+        "Wand en plafond reiniging",
+        "Keuken en pauzeruimte schoonmaak",
+        "Wachtkamer reiniging",
       ],
     },
     {
@@ -78,9 +80,8 @@ function ServicesList() {
       image: "Retail Store.webp",
       features: [
         "Klantgerichte ruimte reiniging",
-        "Display en schap onderhoud",
-        "Vloer polijsten en verzorging",
-        "Raam en glas reiniging",
+        "Display en schap schoonmaak",
+        "Vloer verzorging en grondige reiniging",
         "Service buiten openingstijden beschikbaar",
       ],
     },
@@ -89,10 +90,28 @@ function ServicesList() {
       image: "School Interior.webp",
       features: [
         "Magazijnvloer reiniging",
-        "Apparatuur gebied onderhoud",
+        "Apparatuur gebied schoonmaak",
         "Laadperron reiniging",
         "Hoog plafond ontstoffing",
-        "Veiligheidscompliant procedures",
+      ],
+    },
+    {
+      title: "Particuliere Woningen",
+      image: "Bedroom.webp",
+      features: [
+        "Interieur schoonmaak",
+        "Sanitair",
+        "Vloeroppervlaktes",
+        "Glasbewassing",
+      ],
+    },
+    {
+      title: "Glasbewassing",
+      image: "Glass Cleaning.webp",
+      features: [
+        "Glasreiniging van raam, spiegels, dakzilvering en andere oppervlakken",
+        "Strepproducten en handzuigers om afvalstof te verwijderen",
+        "Professionele afwerking voor een helder en glanzend uitzicht",
       ],
     },
   ];
@@ -149,8 +168,8 @@ function Benefits() {
   const benefits = [
     {
       icon: Sparkles,
-      title: "Milieuvriendelijke Producten",
-      desc: "Wij gebruiken milieuveilige schoonmaakproducten die effectief en duurzaam zijn",
+      title: "Hoogwaardige Producten",
+      desc: "Wij gebruiken hoogwaardige schoonmaakproducten die effectief, duurzaam en veilig zijn",
     },
     {
       icon: Shield,
@@ -202,17 +221,18 @@ function CTA() {
     <section className="py-20 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl font-bold text-strong mb-6">
-          Klaar Om Te Beginnen?
+          Laat uw ruimten glanzen
         </h2>
         <p className="text-xl text-muted mb-8">
-          Neem vandaag nog contact met ons op voor een gratis adviesgesprek en
-          op maat gemaakt schoonmaakplan
+          Neem contact op om uw kantoor of faciliteit in zijn volle glorie te
+          houden. We bieden een gratis adviesgesprek en op maat gemaakt
+          schoonmaakplan aan.
         </p>
         <Link
           to="/contact"
           className="inline-flex items-center gap-2 px-8 py-4 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors shadow-lg"
         >
-          Gratis Offerte Aanvragen
+          Offerte Aanvragen
         </Link>
       </div>
     </section>

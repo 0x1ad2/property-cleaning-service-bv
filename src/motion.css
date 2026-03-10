@@ -26,6 +26,23 @@ img {
   image-rendering: crisp-edges;
 }
 
+/* Fade in lazy-loaded images */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
+/* Prevent flickering in reveal animations */
+[data-reveal] {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -107,7 +124,8 @@ html {
 
 /* Floating animation */
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -121,7 +139,8 @@ html {
 
 /* Pulse glow effect */
 @keyframes pulseGlow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
   }
   50% {
@@ -141,16 +160,6 @@ html {
   }
 }
 
-/* Smooth image loading */
-img[loading="lazy"] {
-  opacity: 0;
-  transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-img[loading="lazy"].loaded {
-  opacity: 1;
-}
-
 /* Hardware acceleration hints */
 .gpu-accelerated {
   transform: translateZ(0);
@@ -167,19 +176,27 @@ img[loading="lazy"].loaded {
 
 /* Premium shadow system */
 .shadow-premium-sm {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.06);
 }
 
 .shadow-premium-md {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.08),
+    0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
 .shadow-premium-lg {
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
 .shadow-premium-xl {
-  box-shadow: 0 16px 64px rgba(0, 0, 0, 0.16), 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 16px 64px rgba(0, 0, 0, 0.16),
+    0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* Magnetic button effect */

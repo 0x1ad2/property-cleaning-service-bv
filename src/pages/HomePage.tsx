@@ -1,10 +1,10 @@
 import { motion, useScroll, useTransform } from "motion/react";
-import { ArrowRight, Award, Shield, Users, Sparkles } from "lucide-react";
+import { ArrowRight, Award, Shield, Users } from "lucide-react";
 import { useRef } from "react";
-import { Parallax } from "../components/Parallax";
 import RevealOnScroll from "../components/RevealOnScroll";
 import MagneticButton from "../components/MagneticButton";
 import FloatingBlob from "../components/FloatingBlob";
+import ServiceCard from "../components/ServiceCard";
 
 function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -38,7 +38,7 @@ function Hero() {
       />
 
       <motion.div
-        className="absolute inset-0"
+        className="absolute inset-0 "
         style={{ y: imageY, willChange: "transform" }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/95 via-blue-800/90 to-teal-900/95 mix-blend-multiply" />
@@ -51,31 +51,9 @@ function Hero() {
       </motion.div>
 
       <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        className="relative z-10 max-w-7xl mx-auto px-8 sm:px-6 lg:px-8 text-center"
         style={{ y: textY, opacity, willChange: "transform, opacity" }}
       >
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.8,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="mb-6"
-        >
-          <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-8"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-          >
-            <Sparkles className="w-4 h-4 text-sky-300" />
-            <span className="text-sm text-white/90 font-medium">
-              Premium Schoonmaakdiensten
-            </span>
-          </motion.div>
-        </motion.div>
-
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -88,7 +66,7 @@ function Hero() {
         >
           Professionele Commerciële
           <br />
-          <span className="bg-gradient-to-r from-sky-300 via-teal-300 to-blue-300 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-sky-300 via-teal-300 to-blue-300 bg-clip-text text-transparent ">
             Schoonmaakdiensten
           </span>
         </motion.h1>
@@ -168,48 +146,80 @@ function Hero() {
 function Services() {
   const services = [
     {
-      title: "Kantoorgebouwen",
-      image: "Office Lobby.webp",
-      desc: "Professionele schoonmaak voor kantoren en bedrijfspanden",
+      title: "Woning",
+      image: "Woning.webp",
+      desc: "Professioneel ontruimen van woningen en appartementen, inclusief het verwijderen van inboedel en het bezemschoon opleveren van de ruimte.",
     },
     {
-      title: "Medische Faciliteiten",
-      image: "Medical Facility.webp",
-      desc: "Schoonmaak voor zorginstellingen",
+      title: "Appartement",
+      image: "Appartement.webp",
+      desc: "Ontruimen en schoonmaken van appartementen, inclusief afvoer van meubels, afval en het netjes opleveren van de woning.",
     },
     {
-      title: "Horeca",
-      image: "Hospitality Venue.webp",
-      desc: "Handhaaf de hoogste normen voor uw gasten",
+      title: "Kantoor",
+      image: "Kantoor.webp",
+      desc: "Professionele reiniging van kantoorruimtes, werkplekken, vergaderruimtes en algemene bedrijfsruimtes.",
     },
     {
-      title: "Sportscholen",
-      image: "Gym Cleaning.webp",
-      desc: "Hygiënische schoonmaak voor sportfaciliteiten",
+      title: "Huisartsenpraktijk",
+      image: "Huisartsenpraktijk.webp",
+      desc: "Hygiënische schoonmaak van huisartsenpraktijken met extra aandacht voor behandelkamers, wachtruimtes en sanitair.",
     },
     {
-      title: "Industrieel",
-      image: "Event Space.webp",
-      desc: "Schoonmaak voor industriële faciliteiten",
+      title: "Tandartspraktijk",
+      image: "Tandartspraktijk.webp",
+      desc: "Grondige reiniging van tandartspraktijken volgens hoge hygiënestandaarden, inclusief behandelkamers en wachtruimtes.",
     },
     {
-      title: "Retail",
-      image: "Retail Store.webp",
-      desc: "Houd uw winkelomgeving schoon voor klanten",
+      title: "Fysiotherapiepraktijk",
+      image: "Fysiotherapiepraktijk.webp",
+      desc: "Professionele schoonmaak van fysiotherapiepraktijken, behandelkamers, oefenruimtes en wachtruimtes.",
+    },
+    {
+      title: "Winkelpand",
+      image: "Winkelpand.webp",
+      desc: "Professionele reiniging van winkelpanden en retailruimtes voor een representatieve en schone uitstraling voor klanten.",
+    },
+    {
+      title: "Restaurant",
+      image: "Restaurant.webp",
+      desc: "Hygiënische schoonmaak van restaurants inclusief keukenruimtes, eetgedeeltes, vloeren en sanitair.",
+    },
+    {
+      title: "Café of Bar",
+      image: "Cafe.webp",
+      desc: "Reiniging van cafés en bars inclusief vloeren, tafels, sanitair en publieksruimtes.",
+    },
+    {
+      title: "Magazijn",
+      image: "Magazijn.webp",
+      desc: "Professionele reiniging van magazijnen en opslagruimtes inclusief vloeren en werkstations.",
+    },
+    {
+      title: "Bedrijfshal",
+      image: "Bedrijfshal.webp",
+      desc: "Industriële reiniging van bedrijfshallen en productieruimtes inclusief vloeren en werkstations.",
+    },
+    {
+      title: "Appartementencomplex",
+      image: "Appartementencomplex.webp",
+      desc: "Schoonmaak van algemene ruimtes in appartementencomplexen zoals trappenhuizen, gangen, entrees en liften.",
+    },
+    {
+      title: "Portiek of Trappenhuis",
+      image: "Trappenhuis.webp",
+      desc: "Periodieke reiniging van portieken en trappenhuizen in wooncomplexen.",
+    },
+    {
+      title: "Glasgevel of Ramen",
+      image: "Glasgevel.webp",
+      desc: "Professionele glasbewassing van ramen en glasgevels voor zowel particuliere als zakelijke panden.",
     },
   ];
 
   return (
     <section className="py-32 bg-gradient-to-b from-white to-blue-50/30 relative overflow-hidden">
-      <FloatingBlob
-        color="from-blue-400/10 to-teal-400/10"
-        size={500}
-        top="10%"
-        right="-10%"
-        duration={30}
-      />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 relative z-10">
         <RevealOnScroll className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-strong mb-4">
             Wij maken verschillende soorten objecten schoon
@@ -222,41 +232,11 @@ function Services() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, idx) => (
-            <RevealOnScroll key={service.title} delay={idx * 0.1}>
-              <Parallax speed={0.95}>
-                <motion.div
-                  className="group relative h-96 rounded-3xl overflow-hidden shadow-xl"
-                  whileHover={{ y: -8 }}
-                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <motion.div
-                    className="absolute inset-0"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    <img
-                      src={`/images/optimized/${service.image}`}
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </motion.div>
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/95 via-blue-900/50 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  <motion.div className="absolute inset-0 bg-gradient-to-t from-teal-600/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 className="text-2xl font-bold text-white mb-2">
-                      {service.title}
-                    </h3>
-                    <p className="text-white/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                      {service.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              </Parallax>
-            </RevealOnScroll>
+            <ServiceCard
+              key={service.title}
+              service={service}
+              delay={idx * 0.1}
+            />
           ))}
         </div>
       </div>
@@ -285,7 +265,7 @@ function WhyUs() {
 
   return (
     <section className="py-32 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
         <RevealOnScroll className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-strong mb-4">
             Waarom Voor Ons Kiezen
@@ -348,9 +328,9 @@ function CTA() {
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/95 via-blue-800/90 to-teal-900/90" />
       </motion.div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-6 lg:px-8 text-center">
         <RevealOnScroll>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 mt-16 leading-tight">
             Op zoek naar professionele schoonmaak die écht het verschil maakt?
           </h2>
         </RevealOnScroll>

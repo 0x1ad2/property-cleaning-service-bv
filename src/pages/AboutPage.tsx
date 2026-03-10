@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Award, Users, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import RevealOnScroll from "../components/RevealOnScroll";
 
 function Hero() {
   return (
@@ -61,29 +62,38 @@ function Story() {
             viewport={{ once: true }}
             transition={{ duration: 0.3 }}
           >
-            <div className="w-12 h-1 bg-blue-700 mb-6" />
-            <h2 className="text-4xl font-bold text-strong mb-6">
-              Onze Toewijding Aan Excellentie
-            </h2>
-            <p className="text-lg text-muted leading-relaxed mb-6">
-              Wij zijn Property Cleaning Service B.V. gestart met een eenvoudige
-              missie: bedrijven voorzien van betrouwbare, professionele
-              schoonmaakdiensten waarop ze kunnen vertrouwen. Ons succes is
-              gebouwd op consistentie, kwaliteit en persoonlijke service.
-            </p>
-            <p className="text-lg text-muted leading-relaxed mb-6">
-              Wij investeren in ons team door middel van voortdurende training,
-              gebruiken hoogwaardige producten en handhaven de hoogste
-              veiligheidsnormen. Wanneer u kiest voor Property Cleaning Service
-              B.V., kiest u voor een partner die zich inzet voor de netheid van
-              uw objecten.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors shadow-lg"
-            >
-              Neem contact op
-            </Link>
+            <RevealOnScroll>
+              <div className="w-12 h-1 bg-blue-700 mb-6" />
+              <h2 className="text-4xl font-bold text-strong mb-6">
+                Onze Toewijding Aan Excellentie
+              </h2>
+            </RevealOnScroll>
+            <RevealOnScroll delay={0.1}>
+              <p className="text-lg text-muted leading-relaxed mb-6">
+                Wij zijn Property Cleaning Service B.V. gestart met een
+                eenvoudige missie: bedrijven voorzien van betrouwbare,
+                professionele schoonmaakdiensten waarop ze kunnen vertrouwen.
+                Ons succes is gebouwd op consistentie, kwaliteit en persoonlijke
+                service.
+              </p>
+            </RevealOnScroll>
+            <RevealOnScroll delay={0.2}>
+              <p className="text-lg text-muted leading-relaxed mb-6">
+                Wij investeren in ons team door middel van voortdurende
+                training, gebruiken hoogwaardige producten en handhaven de
+                hoogste veiligheidsnormen. Wanneer u kiest voor Property
+                Cleaning Service B.V., kiest u voor een partner die zich inzet
+                voor de netheid van uw objecten.
+              </p>
+            </RevealOnScroll>
+            <RevealOnScroll delay={0.3}>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors shadow-lg"
+              >
+                Neem contact op
+              </Link>
+            </RevealOnScroll>
           </motion.div>
         </div>
       </div>
@@ -111,35 +121,39 @@ function Values() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-32 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-strong mb-4">
+        <RevealOnScroll className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-strong mb-6">
             Waarom Voor Ons Kiezen
           </h2>
           <p className="text-lg text-muted max-w-2xl mx-auto">
             Wij zijn toegewijd aan het leveren van uitzonderlijke
             schoonmaakdiensten met professionaliteit en betrouwbaarheid
           </p>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        </RevealOnScroll>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {reasons.map((reason, idx) => (
-            <motion.div
-              key={reason.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: idx * 0.05 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-blue-700 to-sky-400 flex items-center justify-center shadow-lg">
-                <reason.icon className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-strong mb-2">
-                {reason.title}
-              </h3>
-              <p className="text-muted">{reason.desc}</p>
-            </motion.div>
+            <RevealOnScroll key={reason.title} delay={idx * 0.15}>
+              <motion.div
+                className="text-center group"
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <motion.div
+                  className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-600 to-teal-500 flex items-center justify-center shadow-xl shadow-blue-500/30 group-hover:shadow-2xl group-hover:shadow-blue-500/40 transition-shadow duration-500"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <reason.icon className="w-10 h-10 text-white" />
+                </motion.div>
+                <h3 className="text-xl font-bold text-strong mb-3">
+                  {reason.title}
+                </h3>
+                <p className="text-muted leading-relaxed">{reason.desc}</p>
+              </motion.div>
+            </RevealOnScroll>
           ))}
         </div>
       </div>

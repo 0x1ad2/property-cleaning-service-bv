@@ -33,7 +33,7 @@ function Navbar() {
             />
             <div className="flex flex-col">
               <span className="font-bold text-md text-strong leading-tight">
-                Property Cleaning Service
+                Property Cleaning Service B.V.
               </span>
             </div>
           </Link>
@@ -59,14 +59,6 @@ function Navbar() {
                 )}
               </Link>
             ))}
-            <a
-              href="https://fillout.com/t/YOUR_FORM_ID"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-700 text-white text-sm font-semibold rounded-lg hover:bg-blue-800 transition-colors shadow-md shadow-blue-700/30"
-            >
-              Offerte Aanvragen
-            </a>
           </div>
 
           <button
@@ -134,14 +126,16 @@ function Footer() {
               />
               <div className="flex flex-col">
                 <span className="font-bold text-sm leading-tight">
-                  Property Cleaning Service
+                  Property Cleaning Service B.V.
                 </span>
-                <span className="text-xs text-white/70">B.V.</span>
               </div>
             </div>
             <p className="text-sm text-white/70 leading-relaxed">
               Professionele schoonmaakdiensten voor commerciële panden door heel
               Nederland.
+            </p>
+            <p className="text-sm text-white/70 leading-relaxed mt-3">
+              Den Uylstraat 3, 8015DW Zwolle
             </p>
           </div>
           <div>
@@ -221,23 +215,63 @@ function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-white/70">
-              <li>info@propertycleaningservice.nl</li>
+              <li>
+                <a
+                  href="tel:+31612345678"
+                  className="hover:text-sky-400 transition-colors"
+                >
+                  +31 6 12 34 56 78
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:info@propertycleaningservice.nl"
+                  className="hover:text-sky-400 transition-colors"
+                >
+                  info@propertycleaningservice.nl
+                </a>
+              </li>
+              <li>Den Uylstraat 3, 8015DW Zwolle</li>
             </ul>
-            <a
-              href="https://fillout.com/t/YOUR_FORM_ID"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-block px-6 py-2.5 bg-blue-700 text-white text-sm font-semibold rounded-lg hover:bg-blue-800 transition-colors shadow-md"
-            >
-              Offerte Aanvragen
-            </a>
           </div>
         </div>
-        <div className="border-t border-white/10 pt-6 text-center text-xs text-white/50">
-          <p>
-            {new Date().getFullYear()} Property Cleaning Service B.V. Alle
-            rechten voorbehouden.
-          </p>
+        <div className="border-t border-white/10 pt-6">
+          <div className="text-center text-xs text-white/50 mb-3">
+            <p className="mb-2">
+              {new Date().getFullYear()} Property Cleaning Service B.V. Alle
+              rechten voorbehouden.
+            </p>
+            <p className="space-x-4">
+              <span>KvK: 12345678</span>
+              <span>BTW: NL123456789B01</span>
+            </p>
+          </div>
+          <div className="text-center text-xs space-x-4">
+            <a
+              href="/privacy-policy.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 hover:text-sky-400 transition-colors"
+            >
+              Privacybeleid
+            </a>
+            <a
+              href="/terms-conditions.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 hover:text-sky-400 transition-colors"
+            >
+              Algemene Voorwaarden
+            </a>
+            <a
+              href="/cookie-policy.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 hover:text-sky-400 transition-colors"
+            >
+              Cookiebeleid
+            </a>
+          </div>
         </div>
       </div>
     </footer>

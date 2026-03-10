@@ -10,7 +10,6 @@ redirects = []
 publish = "/Users/0x1ad2/Projects/property-cleaning-service-bv/dist"
 publishOrigin = "ui"
 commandOrigin = "ui"
-base = "/Users/0x1ad2/Projects/property-cleaning-service-bv"
 command = "npm run build"
 
 [build.environment]

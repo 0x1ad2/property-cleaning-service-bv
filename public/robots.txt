@@ -1,0 +1,12 @@
+# robots.txt for Property Cleaning Service B.V.
+# https://www.propertycleaningservice.nl
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.propertycleaningservice.nl/sitemap.xml
+
+# Disallow admin/internal pages (if any in future)
+# Disallow: /admin/
+# Disallow: /api/

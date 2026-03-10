@@ -14,34 +14,41 @@ export default function RevealOnScroll({
   delay = 0,
   className = "",
   direction = "up",
-  distance = 20,
+  distance = 40,
 }: RevealOnScrollProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      },
-    );
+    // Use a small delay to ensure DOM is fully painted before observing
+    const timeoutId = setTimeout(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            // Unobserve after first intersection to prevent re-triggering
+            observer.unobserve(entry.target);
+          }
+        },
+        {
+          threshold: 0.05,
+          rootMargin: "0px 0px -100px 0px",
+        },
+      );
 
-    const currentRef = ref.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
+      const currentRef = ref.current;
       if (currentRef) {
-        observer.unobserve(currentRef);
+        observer.observe(currentRef);
       }
-    };
+
+      return () => {
+        if (currentRef) {
+          observer.unobserve(currentRef);
+        }
+      };
+    }, 50);
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   const directionMap = {
@@ -55,24 +62,21 @@ export default function RevealOnScroll({
     <motion.div
       ref={ref}
       initial={{
-        opacity: 0,
+        opacity: 1,
         ...directionMap[direction],
       }}
-      animate={
-        isVisible
-          ? {
-              opacity: 1,
-              x: 0,
-              y: 0,
-            }
-          : {}
-      }
+      animate={isVisible ? { opacity: 1, x: 0, y: 0 } : undefined}
       transition={{
         duration: 0.6,
         delay,
         ease: [0.22, 1, 0.36, 1],
       }}
       className={className}
+      style={{
+        willChange: isVisible ? "transform, opacity" : "auto",
+        backfaceVisibility: "hidden",
+        perspective: "1000px",
+      }}
     >
       {children}
     </motion.div>
@@ -91,7 +95,7 @@ export function StaggerReveal({
   return (
     <div className={className}>
       {children.map((child, index) => (
-        <RevealOnScroll key={index} delay={index * staggerDelay}>
+        <RevealOnScroll key={`stagger-${index}`} delay={index * staggerDelay}>
           {child}
         </RevealOnScroll>
       ))}

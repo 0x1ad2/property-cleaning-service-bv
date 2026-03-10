@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import { Award, Users, Shield } from "lucide-react";
-import { Link } from "react-router-dom";
 import RevealOnScroll from "../components/RevealOnScroll";
 
 function Hero() {
@@ -8,7 +7,7 @@ function Hero() {
     <section className="relative h-[600px] flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="/images/optimized/Branded Company Van.webp"
+          src="/images/optimized/branded-company-van.webp"
           alt="Property Cleaning Service B.V."
           className="w-full h-full object-cover"
         />
@@ -19,7 +18,7 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="text-5xl sm:text-6xl font-bold text-white mb-6 leading-tight max-w-3xl"
+          className="text-4xl sm:text-6xl font-bold text-white mb-6 leading-tight max-w-3xl"
         >
           Wie zijn wij?
         </motion.h1>
@@ -51,7 +50,7 @@ function Story() {
             className="h-[500px] rounded-2xl overflow-hidden shadow-2xl"
           >
             <img
-              src="/images/optimized/Employees Loading Van.webp"
+              src="/images/optimized/employees-loading-van.webp"
               alt="Ons team"
               className="w-full h-full object-cover"
             />
@@ -87,12 +86,14 @@ function Story() {
               </p>
             </RevealOnScroll>
             <RevealOnScroll delay={0.3}>
-              <Link
-                to="/contact"
+              <a
+                href="https://forms.fillout.com/t/82QP886rAqus"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors shadow-lg"
               >
                 Neem contact op
-              </Link>
+              </a>
             </RevealOnScroll>
           </motion.div>
         </div>

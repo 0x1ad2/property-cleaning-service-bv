@@ -1,14 +1,15 @@
 import { motion } from "motion/react";
 import { CheckCircle2, Sparkles, Shield, Clock } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import RevealOnScroll from "../components/RevealOnScroll";
+import { useEffect } from "react";
 
 function Hero() {
   return (
     <section className="relative h-[600px] flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="/images/optimized/Industrial Vacuum Usage.webp"
+          src="/images/optimized/industrial-vacuum-usage.webp"
           alt="Professionele schoonmaakapparatuur"
           className="w-full h-full object-cover"
         />
@@ -19,9 +20,9 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="text-5xl sm:text-6xl font-bold text-white mb-6 leading-tight max-w-3xl mt-16"
+          className="text-4xl sm:text-6xl font-bold text-white mb-6 leading-tight max-w-3xl mt-16 "
         >
-          Uitgebreide Schoonmaakoplossingen
+          Uitgebreide Schoonmaak oplossingen
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -38,12 +39,14 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.2 }}
         >
-          <Link
-            to="/contact"
+          <a
+            href="https://forms.fillout.com/t/82QP886rAqus"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors shadow-lg"
           >
             Offerte Aanvragen
-          </Link>
+          </a>
         </motion.div>
       </div>
     </section>
@@ -54,7 +57,7 @@ function ServicesList() {
   const services = [
     {
       title: "Woningontruiming",
-      image: "Home Emptying.webp",
+      image: "woningontruiming.webp",
       features: [
         "Leeghalen van de woning: Het verwijderen van meubels, huisraad, gordijnen, lampen en vloerbedekking.",
         "Sorteren en recyclen: Inboedel wordt gesorteerd in herbruikbare spullen (donatie/verkoop) en afval.",
@@ -64,7 +67,7 @@ function ServicesList() {
     },
     {
       title: "Opleveringswerkzaamheden",
-      image: "Home Cleanup.webp",
+      image: "opleveringswerkzaamheden.webp",
       features: [
         "Bezemschoon opleveren: De woning stofvrij en netjes achterlaten.",
         "Verwijderen van vloeren en wandbekleding: Laminaat, tapijt, zeil, behang en schroeven in muren verwijderen.",
@@ -74,7 +77,7 @@ function ServicesList() {
     },
     {
       title: "Kantoor reiniging",
-      image: "Office Lobby.webp",
+      image: "kantoor-reiniging.webp",
       features: [
         "Dagelijkse conciërgediensten",
         "Bureau en werkplek reiniging",
@@ -87,7 +90,7 @@ function ServicesList() {
     },
     {
       title: "Praktijk reiniging",
-      image: "Medical Office.webp",
+      image: "praktijk-reiniging.webp",
       features: [
         "Toilet sanitatie",
         "Vloerverzorging en stofzuigen",
@@ -98,7 +101,7 @@ function ServicesList() {
     },
     {
       title: "Retail & Horeca reiniging",
-      image: "Retail Store.webp",
+      image: "retail-horeca-reiniging.webp",
       features: [
         "Klantgerichte ruimte reiniging",
         "Display en schap schoonmaak",
@@ -108,7 +111,7 @@ function ServicesList() {
     },
     {
       title: "Industriële reiniging",
-      image: "School Interior.webp",
+      image: "industriele-reiniging.webp",
       features: [
         "Magazijnvloer reiniging",
         "Apparatuur gebied schoonmaak",
@@ -118,7 +121,7 @@ function ServicesList() {
     },
     {
       title: "Particulier",
-      image: "Bedroom.webp",
+      image: "particulier.webp",
       features: [
         "Interieur schoonmaak",
         "Sanitair",
@@ -128,7 +131,7 @@ function ServicesList() {
     },
     {
       title: "Glasbewassing",
-      image: "Glass Cleaning.webp",
+      image: "glasbewassing.webp",
       features: [
         "Glasreiniging van raam, spiegels, dakzilvering en andere oppervlakken",
         "Strepproducten en handzuigers om afvalstof te verwijderen",
@@ -139,7 +142,7 @@ function ServicesList() {
 
   return (
     <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <RevealOnScroll className="text-center mb-12">
           <h2 className="text-4xl font-bold text-strong mb-4">Onze Diensten</h2>
           <p className="text-lg text-muted max-w-2xl mx-auto">
@@ -147,40 +150,50 @@ function ServicesList() {
             faciliteit
           </p>
         </RevealOnScroll>
-        <div className="grid md:grid-cols-2 gap-8">
-          {services.map((service, idx) => (
-            <RevealOnScroll key={service.title} delay={idx * 0.1}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: idx * 0.05 }}
-                className="bg-background rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <div className="h-64 overflow-hidden">
-                  <img
-                    src={`/images/optimized/${service.image}`}
-                    alt={service.title}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-strong mb-4">
-                    {service.title}
-                  </h3>
-                  <ul className="space-y-3">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-teal-500 shrink-0 mt-0.5" />
-                        <span className="text-muted">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            </RevealOnScroll>
-          ))}
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+          {services.map((service, idx) => {
+            const generatedId = service.title
+              .toLowerCase()
+              .replace(/[^a-z0-9]/g, "-");
+            console.log(
+              `Service "${service.title}" generates ID: "${generatedId}"`,
+            );
+
+            return (
+              <RevealOnScroll key={service.title} delay={idx * 0.1}>
+                <motion.div
+                  id={generatedId}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: idx * 0.05 }}
+                  className="bg-background rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow scroll-mt-24"
+                >
+                  <div className="h-64 overflow-hidden">
+                    <img
+                      src={`/images/optimized/${service.image}`}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <h3 className="text-2xl font-bold text-strong mb-4">
+                      {service.title}
+                    </h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature) => (
+                        <li key={feature} className="flex items-start gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-teal-500 shrink-0 mt-0.5" />
+                          <span className="text-muted">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              </RevealOnScroll>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -259,12 +272,14 @@ function CTA() {
           </p>
         </RevealOnScroll>
         <RevealOnScroll delay={0.2}>
-          <Link
-            to="/contact"
+          <a
+            href="https://forms.fillout.com/t/82QP886rAqus"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors shadow-lg"
           >
             Offerte Aanvragen
-          </Link>
+          </a>
         </RevealOnScroll>
       </div>
     </section>
@@ -272,6 +287,50 @@ function CTA() {
 }
 
 export default function ServicesPage() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      console.log(`ServicesPage: Found hash: "${location.hash}"`);
+
+      // Wait for content to load, then scroll to anchor
+      const scrollToHash = (attempt: number = 1) => {
+        console.log(
+          `ServicesPage: Attempting to scroll to hash: "${location.hash}" (attempt ${attempt})`,
+        );
+
+        const element = document.querySelector(location.hash);
+        console.log(`ServicesPage: Found element:`, element);
+
+        if (element) {
+          const lenis = (
+            window as {
+              lenis?: {
+                scrollTo: (y: number, options?: { offset?: number }) => void;
+              };
+            }
+          ).lenis;
+          const y = element.getBoundingClientRect().top + window.scrollY - 100; // 100px offset for navbar
+
+          console.log(`ServicesPage: Scrolling to position: ${y}`);
+          if (lenis) {
+            lenis.scrollTo(y, { offset: 0 });
+          } else {
+            window.scrollTo({ top: y, behavior: "smooth" });
+          }
+        } else {
+          console.log(`ServicesPage: Element not found, retrying...`);
+          if (attempt < 5) {
+            setTimeout(() => scrollToHash(attempt + 1), attempt * 200);
+          }
+        }
+      };
+
+      // Start scrolling attempts
+      setTimeout(() => scrollToHash(), 100);
+    }
+  }, [location.hash]);
+
   return (
     <>
       <Hero />

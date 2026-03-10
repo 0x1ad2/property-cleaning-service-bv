@@ -60,12 +60,14 @@ export default function NotFoundPage() {
               >
                 Over Ons
               </Link>
-              <Link
-                to="/contact"
+              <a
+                href="https://forms.fillout.com/t/82QP886rAqus"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-4 py-2 bg-white text-strong text-sm font-medium rounded-lg hover:bg-gray-100 transition-colors border border-border"
               >
                 Contact
-              </Link>
+              </a>
             </div>
           </div>
         </motion.div>

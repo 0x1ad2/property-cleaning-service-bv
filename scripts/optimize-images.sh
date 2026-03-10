@@ -86,9 +86,12 @@ while IFS= read -r input_file; do
     filename=$(basename "$input_file")
     name="${filename%.*}"
     
-    # Convert to PascalCase and create output filename
-    # Replace spaces and hyphens with nothing, capitalize first letter of each word
-    output_name=$(echo "$name" | sed -e 's/[-_]/ /g' | awk '{for(i=1;i<=NF;i++)sub(/./,toupper(substr($i,1,1)),$i)}1' | sed 's/ //g')
+    # Convert to lowercase-kebab case and normalize special characters
+    # Replace spaces and special characters with hyphens, convert to lowercase
+    output_name=$(echo "$name" | \
+        sed -e 's/[ëéèê]/e/g' -e 's/[&]/and/g' -e 's/[^a-zA-Z0-9]/-/g' | \
+        sed -e 's/--*/-/g' -e 's/^-//' -e 's/-$//' | \
+        tr '[:upper:]' '[:lower:]')
     output_file="$OUTPUT_DIR/${output_name}.webp"
     
     # Process the image

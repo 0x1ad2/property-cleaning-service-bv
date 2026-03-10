@@ -91,7 +91,7 @@ export default function CookieConsent() {
           <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-2xl border border-border overflow-hidden">
             <div className="p-6 sm:p-8">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center shrink-0">
                   <Cookie className="w-6 h-6 text-blue-700" />
                 </div>
                 <div className="flex-1">
@@ -199,7 +199,7 @@ export default function CookieConsent() {
 
               <div className="mt-4 text-center">
                 <a
-                  href="/privacy-policy.pdf"
+                  href="/files/privacy-verklaring.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs text-blue-700 hover:text-blue-800 underline"

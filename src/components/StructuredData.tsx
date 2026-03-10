@@ -40,7 +40,7 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
             name: "Property Cleaning Service B.V.",
             image: "https://www.propertycleaningservice.nl/logo.png",
             url: "https://www.propertycleaningservice.nl",
-            telephone: "+31612345678",
+            telephone: "+31687213245",
             email: "info@propertycleaningservice.nl",
             priceRange: "€€",
             address: {

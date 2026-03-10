@@ -1,6 +1,17 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+// Type declaration for Google Analytics gtag function
+declare global {
+  interface Window {
+    gtag?: (
+      command: "config" | "event" | "js" | "set",
+      targetId: string,
+      config?: Record<string, any>,
+    ) => void;
+  }
+}
+
 interface SEOProps {
   title?: string;
   description?: string;
@@ -28,13 +39,13 @@ export default function SEO({
     const updateMetaTag = (name: string, content: string, property = false) => {
       const attr = property ? "property" : "name";
       let element = document.querySelector(`meta[${attr}="${name}"]`);
-      
+
       if (!element) {
         element = document.createElement("meta");
         element.setAttribute(attr, name);
         document.head.appendChild(element);
       }
-      
+
       element.setAttribute("content", content);
     };
 
@@ -65,6 +76,16 @@ export default function SEO({
     }
     canonicalLink.setAttribute("href", canonicalUrl);
   }, [title, description, image, type, url, canonicalUrl]);
+
+  // Track page views with Google Analytics
+  useEffect(() => {
+    // Only track if gtag is available (Google Analytics is loaded)
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("config", "G-5NCWT0986H", {
+        page_path: location.pathname + location.search + location.hash,
+      });
+    }
+  }, [location]);
 
   return null;
 }

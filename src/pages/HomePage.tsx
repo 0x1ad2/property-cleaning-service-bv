@@ -43,7 +43,7 @@ function Hero() {
       >
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/95 via-blue-800/90 to-teal-900/95 mix-blend-multiply" />
         <img
-          src="/images/optimized/Office Building Hall.webp"
+          src="/images/optimized/office-building-hall.webp"
           alt="Commerciële schoonmaak"
           className="w-full h-full object-cover"
           loading="eager"
@@ -62,7 +62,7 @@ function Hero() {
             delay: 0.1,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.1]"
+          className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-[1.1]"
         >
           Professionele Commerciële
           <br />
@@ -95,20 +95,18 @@ function Hero() {
           }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <MagneticButton
-            href="https://fillout.com/t/YOUR_FORM_ID"
+          <a
+            href="https://forms.fillout.com/t/82QP886rAqus"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-900 font-semibold rounded-xl hover:bg-blue-50 transition-colors shadow-2xl shadow-blue-900/50"
-            strength={0.2}
+            className="inline-flex items-center justify-center  gap-2 px-8 py-4 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors shadow-lg"
           >
             Offerte Aanvragen
-            <ArrowRight className="w-5 h-5" />
-          </MagneticButton>
+          </a>
 
           <MagneticButton
             href="/diensten"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-md text-white font-semibold rounded-xl hover:bg-white/20 transition-colors border border-white/20"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-md text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border border-white/20"
             strength={0.15}
           >
             Onze Diensten
@@ -147,72 +145,72 @@ function Services() {
   const services = [
     {
       title: "Woning",
-      image: "Woning.webp",
+      image: "woning.webp",
       desc: "Professioneel ontruimen van woningen en appartementen, inclusief het verwijderen van inboedel en het bezemschoon opleveren van de ruimte.",
     },
     {
       title: "Appartement",
-      image: "Appartement.webp",
+      image: "appartement.webp",
       desc: "Ontruimen en schoonmaken van appartementen, inclusief afvoer van meubels, afval en het netjes opleveren van de woning.",
     },
     {
       title: "Kantoor",
-      image: "Kantoor.webp",
+      image: "kantoor.webp",
       desc: "Professionele reiniging van kantoorruimtes, werkplekken, vergaderruimtes en algemene bedrijfsruimtes.",
     },
     {
       title: "Huisartsenpraktijk",
-      image: "Huisartsenpraktijk.webp",
+      image: "huisartspraktijk.webp",
       desc: "Hygiënische schoonmaak van huisartsenpraktijken met extra aandacht voor behandelkamers, wachtruimtes en sanitair.",
     },
     {
       title: "Tandartspraktijk",
-      image: "Tandartspraktijk.webp",
+      image: "tandartspraktijk.webp",
       desc: "Grondige reiniging van tandartspraktijken volgens hoge hygiënestandaarden, inclusief behandelkamers en wachtruimtes.",
     },
     {
       title: "Fysiotherapiepraktijk",
-      image: "Fysiotherapiepraktijk.webp",
+      image: "fysiotherapiepraktijk.webp",
       desc: "Professionele schoonmaak van fysiotherapiepraktijken, behandelkamers, oefenruimtes en wachtruimtes.",
     },
     {
       title: "Winkelpand",
-      image: "Winkelpand.webp",
+      image: "winkel.webp",
       desc: "Professionele reiniging van winkelpanden en retailruimtes voor een representatieve en schone uitstraling voor klanten.",
     },
     {
       title: "Restaurant",
-      image: "Restaurant.webp",
+      image: "hospitality-venue.webp",
       desc: "Hygiënische schoonmaak van restaurants inclusief keukenruimtes, eetgedeeltes, vloeren en sanitair.",
     },
     {
       title: "Café of Bar",
-      image: "Cafe.webp",
+      image: "cafe.webp",
       desc: "Reiniging van cafés en bars inclusief vloeren, tafels, sanitair en publieksruimtes.",
     },
     {
       title: "Magazijn",
-      image: "Magazijn.webp",
+      image: "magazijn.webp",
       desc: "Professionele reiniging van magazijnen en opslagruimtes inclusief vloeren en werkstations.",
     },
     {
       title: "Bedrijfshal",
-      image: "Bedrijfshal.webp",
+      image: "bedrijfshal.webp",
       desc: "Industriële reiniging van bedrijfshallen en productieruimtes inclusief vloeren en werkstations.",
     },
     {
       title: "Appartementencomplex",
-      image: "Appartementencomplex.webp",
+      image: "appartementencomplex.webp",
       desc: "Schoonmaak van algemene ruimtes in appartementencomplexen zoals trappenhuizen, gangen, entrees en liften.",
     },
     {
       title: "Portiek of Trappenhuis",
-      image: "Trappenhuis.webp",
+      image: "trappenhuis.webp",
       desc: "Periodieke reiniging van portieken en trappenhuizen in wooncomplexen.",
     },
     {
       title: "Glasgevel of Ramen",
-      image: "Glasgevel.webp",
+      image: "glasbewassing.webp",
       desc: "Professionele glasbewassing van ramen en glasgevels voor zowel particuliere als zakelijke panden.",
     },
   ];
@@ -320,7 +318,7 @@ function CTA() {
         style={{ y, willChange: "transform" }}
       >
         <img
-          src="/images/optimized/Employees Loading Van.webp"
+          src="/images/optimized/employees-loading-van.webp"
           alt="Ons team"
           className="w-full h-full object-cover"
           loading="lazy"
@@ -343,16 +341,15 @@ function CTA() {
         </RevealOnScroll>
 
         <RevealOnScroll delay={0.2}>
-          <MagneticButton
-            href="https://fillout.com/t/YOUR_FORM_ID"
+          <a
+            href="https://forms.fillout.com/t/82QP886rAqus"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-white text-blue-900 font-bold text-lg rounded-xl hover:bg-blue-50 transition-colors shadow-2xl shadow-blue-900/50"
-            strength={0.25}
+            className="inline-flex items-center gap-3 px-10 py-5 bg-white text-blue-900 font-bold text-lg rounded-lg hover:bg-blue-50 transition-colors shadow-2xl shadow-blue-900/50"
           >
             Offerte Aanvragen
             <ArrowRight className="w-6 h-6" />
-          </MagneticButton>
+          </a>
         </RevealOnScroll>
       </div>
     </section>

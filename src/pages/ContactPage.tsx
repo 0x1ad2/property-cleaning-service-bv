@@ -7,7 +7,7 @@ function Hero() {
     <section className="relative h-[500px] flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="/images/optimized/Office Building Hall.webp"
+          src="/images/optimized/office-building-hall.webp"
           alt="Neem contact op"
           className="w-full h-full object-cover"
         />
@@ -18,7 +18,7 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="text-5xl sm:text-6xl font-bold text-white mb-6 leading-tight"
+          className="text-4xl sm:text-6xl font-bold text-white mb-6 leading-tight"
         >
           Neem Contact Op
         </motion.h1>
@@ -41,8 +41,8 @@ function ContactInfo() {
     {
       icon: Phone,
       title: "Telefoon",
-      value: "+31 6 12 34 56 78",
-      href: "tel:+31612345678",
+      value: "(06) 87 21 32 45",
+      href: "tel:+31687213245",
     },
     {
       icon: Mail,
@@ -138,7 +138,7 @@ function ContactForm() {
                 ontvangt.
               </p>
               <a
-                href="https://fillout.com/t/YOUR_FORM_ID"
+                href="https://forms.fillout.com/t/82QP886rAqus"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors shadow-lg shadow-blue-700/30"

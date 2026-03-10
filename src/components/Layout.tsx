@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
+import AnchorLink from "./AnchorLink";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -52,9 +53,9 @@ function Navbar() {
                 {link.label}
                 {isActive(link.href) && (
                   <motion.div
-                    layoutId="navbar-indicator"
-                    className="h-0.5 bg-blue-700 mt-1"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    layoutId="nav-indicator"
+                    className="h-0.5 bg-blue-700 w-full mt-1"
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
               </Link>
@@ -96,7 +97,7 @@ function Navbar() {
                 </Link>
               ))}
               <a
-                href="https://fillout.com/t/YOUR_FORM_ID"
+                href="https://forms.fillout.com/t/82QP886rAqus"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
@@ -142,52 +143,68 @@ function Footer() {
             <h4 className="font-semibold mb-4">Diensten</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link
-                  to="/diensten"
+                <AnchorLink
+                  to="/diensten#woningontruiming"
                   className="text-white/70 hover:text-sky-400 transition-colors"
                 >
-                  Kantoorschoonmaak
-                </Link>
+                  Woningontruiming
+                </AnchorLink>
               </li>
               <li>
-                <Link
-                  to="/diensten"
+                <AnchorLink
+                  to="/diensten#opleveringswerkzaamheden"
                   className="text-white/70 hover:text-sky-400 transition-colors"
                 >
-                  Huisarts & Tandarts Praktijken
-                </Link>
+                  Opleveringswerkzaamheden
+                </AnchorLink>
               </li>
               <li>
-                <Link
-                  to="/diensten"
+                <AnchorLink
+                  to="/diensten#kantoor-reiniging"
                   className="text-white/70 hover:text-sky-400 transition-colors"
                 >
-                  Retail & Horeca
-                </Link>
+                  Kantoor reiniging
+                </AnchorLink>
               </li>
               <li>
-                <Link
-                  to="/diensten"
+                <AnchorLink
+                  to="/diensten#praktijk-reiniging"
                   className="text-white/70 hover:text-sky-400 transition-colors"
                 >
-                  Industriële Panden
-                </Link>
+                  Praktijk reiniging
+                </AnchorLink>
               </li>
               <li>
-                <Link
-                  to="/diensten"
+                <AnchorLink
+                  to="/diensten#retail---horeca-reiniging"
                   className="text-white/70 hover:text-sky-400 transition-colors"
                 >
-                  Particuliere Woningen
-                </Link>
+                  Retail & Horeca reiniging
+                </AnchorLink>
               </li>
               <li>
-                <Link
-                  to="/diensten"
+                <AnchorLink
+                  to="/diensten#industri-le-reiniging"
+                  className="text-white/70 hover:text-sky-400 transition-colors"
+                >
+                  Industriële reiniging
+                </AnchorLink>
+              </li>
+              <li>
+                <AnchorLink
+                  to="/diensten#particulier"
+                  className="text-white/70 hover:text-sky-400 transition-colors"
+                >
+                  Particulier
+                </AnchorLink>
+              </li>
+              <li>
+                <AnchorLink
+                  to="/diensten#glasbewassing"
                   className="text-white/70 hover:text-sky-400 transition-colors"
                 >
                   Glasbewassing
-                </Link>
+                </AnchorLink>
               </li>
             </ul>
           </div>
@@ -217,10 +234,10 @@ function Footer() {
             <ul className="space-y-2 text-sm text-white/70">
               <li>
                 <a
-                  href="tel:+31612345678"
+                  href="tel:+31687213245"
                   className="hover:text-sky-400 transition-colors"
                 >
-                  +31 6 12 34 56 78
+                  (06) 87 21 32 45
                 </a>
               </li>
               <li>
@@ -242,13 +259,13 @@ function Footer() {
               rechten voorbehouden.
             </p>
             <p className="space-x-4">
-              <span>KvK: 12345678</span>
-              <span>BTW: NL123456789B01</span>
+              <span>KvK: 99867184</span>
+              <span>BTW: NL869166311B01</span>
             </p>
           </div>
           <div className="text-center text-xs space-x-4">
             <a
-              href="/privacy-policy.pdf"
+              href="/files/privacy-verklaring.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/50 hover:text-sky-400 transition-colors"
@@ -256,7 +273,7 @@ function Footer() {
               Privacybeleid
             </a>
             <a
-              href="/terms-conditions.pdf"
+              href="/files/algemene-voorwaarden.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/50 hover:text-sky-400 transition-colors"
@@ -264,7 +281,7 @@ function Footer() {
               Algemene Voorwaarden
             </a>
             <a
-              href="/cookie-policy.pdf"
+              href="/files/cookie-verklaring.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/50 hover:text-sky-400 transition-colors"

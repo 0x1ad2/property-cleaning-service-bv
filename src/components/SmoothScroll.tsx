@@ -20,6 +20,9 @@ export default function SmoothScroll({
 
     lenisRef.current = lenis;
 
+    // Expose lenis instance globally for ScrollToTop component
+    (window as { lenis?: Lenis }).lenis = lenis;
+
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -29,6 +32,8 @@ export default function SmoothScroll({
 
     return () => {
       lenis.destroy();
+      // Clean up global reference
+      delete (window as { lenis?: Lenis }).lenis;
     };
   }, []);
 

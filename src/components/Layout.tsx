@@ -242,6 +242,14 @@ function Footer() {
               </li>
               <li>
                 <a
+                  href="tel:+31610889080"
+                  className="hover:text-sky-400 transition-colors"
+                >
+                  (06) 10 88 90 80
+                </a>
+              </li>
+              <li>
+                <a
                   href="mailto:info@propertycleaningservice.nl"
                   className="hover:text-sky-400 transition-colors"
                 >

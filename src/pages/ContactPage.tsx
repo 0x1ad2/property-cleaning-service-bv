@@ -40,9 +40,15 @@ function ContactInfo() {
   const info = [
     {
       icon: Phone,
-      title: "Telefoon",
+      title: "Damiën",
       value: "(06) 87 21 32 45",
       href: "tel:+31687213245",
+    },
+    {
+      icon: Phone,
+      title: "Jordi",
+      value: "(06) 10 88 90 80",
+      href: "tel:+31610889080",
     },
     {
       icon: Mail,
